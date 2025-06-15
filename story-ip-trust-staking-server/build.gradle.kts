@@ -24,13 +24,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-    // spring data
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    // querydsl
-    implementation("com.querydsl:querydsl-jpa")
-    kapt(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
-
     // open-feign
     implementation("io.github.openfeign:feign-okhttp:13.1")
     implementation("io.github.openfeign:feign-jackson:13.1")

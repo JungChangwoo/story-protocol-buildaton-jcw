@@ -1,21 +1,6 @@
 spring:
   application:
     name: story-protocol-buildaton
-  
-  datasource:
-    url: jdbc:postgresql://localhost:5432/story_protocol
-    username: ${DB_USERNAME:story_user}
-    password: ${DB_PASSWORD:story_password}
-    driver-class-name: org.postgresql.Driver
-  
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: false
 
 server:
   port: 8080
