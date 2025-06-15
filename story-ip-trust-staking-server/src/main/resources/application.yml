@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: story-protocol-buildaton
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/story_protocol
+    username: ${DB_USERNAME:story_user}
+    password: ${DB_PASSWORD:story_password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+
+server:
+  port: 8080
+
+story:
+  api:
+    url: https://api.storyapis.com
+    key: ${STORY_API_KEY:MhBsxkU1z9fG6TofE59KqiiWV-YlYE8Q4awlLQehF3U}
+    chain: ${STORY_API_CHAIN:story-aeneid}
+
+blockchain:
+  rpc:
+    url: ${BLOCKCHAIN_RPC_URL:https://sepolia.infura.io/v3/566bfc47a4474e029ebea7c6ea708283}
+  staking:
+    batch-size: ${BLOCKCHAIN_STAKING_BATCH_SIZE:50}
+    timeout: ${BLOCKCHAIN_STAKING_TIMEOUT:30000}
+    retry-attempts: ${BLOCKCHAIN_STAKING_RETRY_ATTEMPTS:3}
+
+staking:
+  contract:
+    address: ${STAKING_CONTRACT_ADDRESS:0x6E0D112252335D08DBFCD1dA187Bcc43cdA62a9B}
+
+logging:
+  level:
+    story_protocol: INFO
+    org.springframework.web: INFO
+    feign: INFO

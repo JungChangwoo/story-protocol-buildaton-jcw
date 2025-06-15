@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:14.3
+    container_name: story-protocol
+    restart: unless-stopped
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: jcw
+      POSTGRES_DB: story_protocol
+
+    volumes:
+      - story-protocol:/var/lib/postgresql/data
+
+volumes:
+  story-protocol:
