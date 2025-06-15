@@ -48,24 +48,6 @@ Get paginated slash history records from the smart contract.
 - `offset` (optional): Starting position (default: 0)
 - `limit` (optional): Number of records (default: 10, max: 100)
 
-**Response:**
-```json
-{
-  "records": [
-    {
-      "slashedIPAsset": "0x123...",
-      "redistributedToIPAsset": "0x456...",
-      "amount": "1000000000000000000",
-      "timestamp": "2024-01-01T00:00:00Z"
-    }
-  ],
-  "total": 100,
-  "offset": 0,
-  "limit": 10,
-  "hasNext": true
-}
-```
-
 **Example Usage:**
 ```bash
 # Basic query
@@ -73,6 +55,18 @@ curl -X GET "http://localhost:8080/api/v1/slash-history"
 
 # With pagination
 curl -X GET "http://localhost:8080/api/v1/slash-history?offset=10&limit=20"
+```
+
+### Assets API
+
+#### GET `/api/v3/assets`
+
+Get IP assets with staking information and credibility scores.
+
+**Example Usage:**
+```bash
+# Get all assets
+curl -X GET "http://localhost:8080/api/v3/assets"
 ```
 
 ## Architecture
