@@ -23,7 +23,7 @@
 먼저 백엔드 서버가 실행되어야 합니다:
 
 ```bash
-cd /Users/changwoojung/project/story-protocol-buildaton
+cd /$server_path
 ./gradlew bootRun
 ```
 
@@ -31,60 +31,13 @@ cd /Users/changwoojung/project/story-protocol-buildaton
 
 ### 2. 프론트엔드 웹 애플리케이션 실행
 
-새 터미널에서:
-
 ```bash
-cd /Users/changwoojung/project/story-protocol-buildaton-web/story-protocol-buildaton-web
+cd /$web_path
 npm install
 npm start
 ```
 
 웹 애플리케이션은 `http://localhost:3000`에서 실행됩니다.
-
-## API 엔드포인트
-
-백엔드는 다음 API를 제공합니다:
-
-- **POST** `/api/v3/assets`: IP Asset 목록을 조회합니다.
-
-### 요청 예시
-
-```json
-{
-  "options": {
-    "orderBy": "blocknumber",
-    "orderDirection": "desc",
-    "pagination": {
-      "limit": 20
-    }
-  }
-}
-```
-
-### 응답 예시
-
-```json
-{
-  "data": [
-    {
-      "id": "asset_id",
-      "ipId": "0x...",
-      "trustRank": "0.85",
-      "nftMetadata": {
-        "name": "Asset Name",
-        "imageUrl": "https://...",
-        "tokenContract": "0x...",
-        "tokenId": "123"
-      },
-      "blockNumber": "12345",
-      "blockTimestamp": "1640995200",
-      "childrenCount": 5
-    }
-  ],
-  "hasNextPage": false,
-  "hasPreviousPage": false
-}
-```
 
 ## 주요 컴포넌트
 
