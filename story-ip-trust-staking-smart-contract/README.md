@@ -21,7 +21,8 @@ This directory contains the core smart contract for the Story IP Trust Staking s
 ```
 
 ### Contract Address
-- **Testnet**: `0x6E0D112252335D08DBFCD1dA187Bcc43cdA62a9B` (example)
+- **Testnet**: `0x6E0D112252335D08DBFCD1dA187Bcc43cdA62a9B`
+- **Contract Link: [https://sepolia.etherscan.io/address/0x6e0d112252335d08dbfcd1da187bcc43cda62a9b]
 
 ### Main Functions
 
@@ -48,6 +49,3 @@ getSlashHistoryPaginated(uint256, uint256) // Get slash history
 - Gas optimization with batch functions
 
 ---
-
-📄 **License**: MIT  
-🔗 **Main Project**: [../README.md](../README.md)
