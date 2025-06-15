@@ -1,6 +1,4 @@
-# 🏆 Story IP Trust Staking
-
-![Story Protocol](https://img.shields.io/badge/Story%20Protocol-Hackathon-blue) ![Solidity](https://img.shields.io/badge/Solidity-^0.8.20-red) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-green) ![React](https://img.shields.io/badge/React-19.1.0-blue)
+![Story](https://img.shields.io/badge/Story-v3-blue) ![Solidity](https://img.shields.io/badge/Solidity-^0.8.20-red) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-green) ![React](https://img.shields.io/badge/React-19.1.0-blue)
 
 > **Story Protocol Hackathon Project**  
 > A decentralized trust staking system for Story Protocol IP assets with slash redistribution mechanism
@@ -39,8 +37,8 @@ We propose the following features:
 - **🌐 Full-Stack DApp**: Smart contract, backend API, and frontend web interface
 
 ## 🏗️ Architecture
+![diagram-export-2025 -6 -15 -오후-9_16_02](https://github.com/user-attachments/assets/4bfc6e6f-db50-4e61-bfb2-0f3e81943f64)
 
-![Architecture Diagram](./assets/architecture-diagram.png)
 
 
 ## 🚀 Quick Start
