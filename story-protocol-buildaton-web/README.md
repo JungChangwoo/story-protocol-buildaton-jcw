@@ -81,5 +81,3 @@ The web application runs on `http://localhost:3000`.
 
 - **React**: 19.1.0
 - **Node.js**: Latest LTS version recommended
-- **Backend**: Spring Boot (Kotlin)
-- **API**: Story Protocol API
