@@ -8,7 +8,6 @@ Spring Boot backend service providing REST APIs for the Story IP Trust Staking s
 
 - **Spring Boot 3.5.0**
 - **Kotlin**
-- **PostgreSQL**
 - **QueryDSL**
 - **OpenFeign** for external API calls
 
@@ -16,19 +15,12 @@ Spring Boot backend service providing REST APIs for the Story IP Trust Staking s
 
 ### Prerequisites
 - Java 17+
-- PostgreSQL database
 - Smart contract deployed and configured
 
 ### Environment Setup
 
-1. Configure database in `application.yml`:
+1. Configure application in `application.yml`:
 ```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/story_staking
-    username: your_username
-    password: your_password
-
 blockchain:
   rpc:
     url: ${BLOCKCHAIN_RPC_URL:https://sepolia.infura.io/v3/...}
@@ -121,9 +113,6 @@ src/main/kotlin/slashhistory/
 ## Docker Support
 
 ```bash
-# Start PostgreSQL with docker-compose
-docker-compose up -d postgres
-
 # Build and run application
 ./gradlew build
 docker build -t story-staking-server .
@@ -131,10 +120,6 @@ docker run -p 8080:8080 story-staking-server
 ```
 
 ## Configuration
-
-### Database Migration
-
-Database schema is managed through JPA/Hibernate auto-DDL. In production, use proper migration tools like Flyway.
 
 ### Blockchain Integration
 

@@ -5,13 +5,13 @@
 
 ## 🎯 Project Overview
 
-### The Problem
+### 🚨 The Problem
 
 In centralized systems, IP is protected by strict legal frameworks, so users do not bear much responsibility for verifying the legitimacy of copyrights. However, IP assets registered on **Story**, a decentralized platform, offer many advantages—but because anyone can freely register IP, users now have the responsibility to carefully evaluate whether an IP is legitimate.
 
 For example, if someone creates derivative works based on an unfair IP, they may later suffer disadvantages as **Dispute Tags** begin to spread. Currently, there is a lack of effective tools for measuring the legitimacy of an IP asset. Likewise, IP owners lack a way to demonstrate the **credibility** of their IP.
 
-### Our Solution
+### 💡 Our Solution
 
 **Story IP Trust Staking** introduces a tool to assess Story IP credibility. Our core idea is: ***cost is trust*** — the same principle that underlies blockchain consensus, where blocks backed by higher costs are favored.
 
@@ -21,7 +21,7 @@ We propose the following features:
 3. **The credibility of an IP asset is measured by the amount staked** on it
 4. **A UI allows users to check IP asset credibility** before making decisions
 
-### Expected Outcomes
+### 🎯 Expected Outcomes
 
 - **Creators stake** to prove their IP's trustworthiness and build reputation
 - **Derivative creators** can safely choose credible IPs with confidence
@@ -31,7 +31,7 @@ We propose the following features:
 ### 🔑 Key Features
 
 - **🔒 IP Asset Staking**: Stake ETH on any Story Protocol IP asset to show trust
-- **⚖️ Trust-Based Slashing**: Malicious or violating IP assets can be slashed by contract owner
+- **⚔️ Slash**: Malicious or violating IP assets can be slashed by contract owner
 - **🔄 Automatic Redistribution**: Slashed stakes are automatically redistributed to other IP asset stakers
 - **📊 Transparent History**: Complete slash history with pagination support
 - **🌐 Full-Stack DApp**: Smart contract, backend API, and frontend web interface
@@ -55,13 +55,17 @@ git clone https://github.com/your-username/story-protocol-buildaton
 cd story-protocol-buildaton
 ```
 
-### 2. Smart Contract Deployment
+### 2. Smart Contract (Already Deployed)
+
+The smart contract is already deployed on Sepolia testnet!
+
+**🔗 Contract Address**: `0x6E0D112252335D08DBFCD1dA187Bcc43cdA62a9B`
+
+**📋 Verify on Etherscan**: https://sepolia.etherscan.io/address/0x6e0d112252335d08dbfcd1da187bcc43cda62a9b
 
 ```bash
-cd story-ip-trust-staking-smart-contract
-
-# Deploy to testnet (update deployment script with your configuration)
-# Contract Address: 0x6E0D112252335D08DBFCD1dA187Bcc43cdA62a9B (example)
+# You can interact with the deployed contract directly
+# No need to deploy - just use the address above in your configuration
 ```
 
 ### 3. Backend Setup
@@ -113,8 +117,9 @@ function getTotalStakedAmount(address ipAssetId) external view returns (uint256)
 // Get user's staked amount for an IP asset
 function getUserStakedAmount(address user, address ipAssetId) external view returns (uint256)
 
-// Get all active IP assets
-function getActiveIPAssets() external view returns (address[] memory)
+// Get slash history for multiple IP assets
+function getIPAssetsSlashHistory(address[] calldata ipAssetIds) 
+    external view returns (SlashRecord[][] memory)
 
 // Get slash history with pagination
 function getSlashHistoryPaginated(uint256 offset, uint256 limit) 
@@ -124,28 +129,10 @@ function getSlashHistoryPaginated(uint256 offset, uint256 limit)
 ## 🌐 API Endpoints
 
 ### Slash History API
+- `GET /api/v1/slash-history` - Get paginated slash history records
 
-```http
-GET /api/v1/slash-history?offset=0&limit=10
-```
-
-**Response:**
-```json
-{
-  "records": [
-    {
-      "slashedIPAsset": "0x123...",
-      "redistributedToIPAsset": "0x456...",
-      "amount": "1000000000000000000",
-      "timestamp": "2024-01-01T00:00:00Z"
-    }
-  ],
-  "total": 100,
-  "offset": 0,
-  "limit": 10,
-  "hasNext": true
-}
-```
+### Assets API  
+- `GET /api/v3/assets` - Get IP assets with staking information and credibility scores
 
 ## 🎮 How It Works
 
@@ -180,7 +167,6 @@ GET /api/v1/slash-history?offset=0&limit=10
 - **Hexagonal Architecture**: Clean separation of concerns
 - **Domain-Driven Design**: Business logic isolation
 - **Spring Boot**: RESTful API with validation
-- **PostgreSQL**: Data persistence and indexing
 
 ### Frontend Technology
 
@@ -188,87 +174,15 @@ GET /api/v1/slash-history?offset=0&limit=10
 - **Ethers.js**: Web3 integration
 - **Responsive Design**: Mobile-friendly interface
 
-## 📊 Project Structure
-
-```
-story-protocol-buildaton/
-├── story-ip-trust-staking-smart-contract/
-│   └── story-ip-staking-module.sol          # Core smart contract
-├── story-ip-trust-staking-server/           # Spring Boot backend
-│   ├── src/main/kotlin/
-│   ├── build.gradle.kts                     # Dependencies
-│   └── slash-history-api.md                 # API documentation
-└── story-ip-trust-staking-web/             # React frontend
-    └── story-protocol-buildaton-web/
-        ├── src/
-        ├── public/
-        └── package.json
-```
-
-## 🎯 Hackathon Highlights
-
-### Innovation Points
-
-1. **Trust-as-a-Service**: Novel approach to IP asset validation through economic incentives
-2. **Self-Regulating Ecosystem**: Automatic redistribution creates natural selection pressure
-3. **Transparent Governance**: Complete slash history with public audit trail
-4. **Full-Stack Implementation**: End-to-end solution from smart contract to user interface
-
-### Technical Achievements
-
-- **Gas-Efficient Design**: Optimized smart contract with batch operations
-- **Scalable Architecture**: Hexagonal architecture for maintainable code
-- **User Experience**: Intuitive interface for complex blockchain operations
-- **Security First**: Comprehensive input validation and access controls
-
-## 🧪 Testing
-
-### Smart Contract Testing
-```bash
-# Run contract tests
-forge test
-```
-
-### Backend Testing
-```bash
-cd story-ip-trust-staking-server
-./gradlew test
-```
-
-### Frontend Testing
-```bash
-cd story-ip-trust-staking-web/story-protocol-buildaton-web
-npm test
-```
-
-## 🤝 Contributing
-
-This project was built for the Story Protocol Hackathon. For development:
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🎉 Acknowledgments
-
-- **Story Protocol Team** for the innovative IP infrastructure
-- **OpenZeppelin** for secure smart contract libraries
-- **Ethereum Foundation** for the robust blockchain platform
-
 ## 📞 Contact
 
 Built with ❤️ for Story Protocol Hackathon
 
 - **Developer**: Chang Woo Jung
+- **Email**: ikkwik04@gmail.com
+- **Phone**: 010-3316-4354
 - **Project**: Story IP Trust Staking
-- **Demo**: [Live Demo Link]
-- **Presentation**: [Presentation Link]
+- **Demo**: [https://youtu.be/jFrFnk8ViGw]
 
 ---
 
