@@ -47,7 +47,7 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/story-protocol-buildaton-server" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -224,7 +224,7 @@
       <workItem from="1749377858864" duration="3319000" />
       <workItem from="1749875678821" duration="6351000" />
       <workItem from="1749891768504" duration="15417000" />
-      <workItem from="1749965225901" duration="3297000" />
+      <workItem from="1749965225901" duration="3305000" />
     </task>
     <servers />
   </component>
