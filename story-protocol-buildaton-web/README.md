@@ -1,4 +1,4 @@
-# Story Protocol Buildathon Web Application
+# Story Ip Trust Staking Web Application
 
 This web application is a React application that visualizes and displays Story Protocol IP Assets.
 
