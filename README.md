@@ -33,7 +33,6 @@ We propose the following features:
 - **🔒 IP Asset Staking**: Stake ETH on any Story Protocol IP asset to show trust
 - **⚔️ Slash**: Malicious or violating IP assets can be slashed by contract owner
 - **🔄 Automatic Redistribution**: Slashed stakes are automatically redistributed to other IP asset stakers
-- **📊 Transparent History**: Complete slash history with pagination support
 - **🌐 Full-Stack DApp**: Smart contract, backend API, and frontend web interface
 
 ## 🏗️ Architecture
