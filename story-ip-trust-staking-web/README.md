@@ -49,7 +49,6 @@ npx serve -s build
 - **📤 Unstaking**: Withdraw staked amounts
 - **📊 Dashboard**: View staking statistics and balances
 - **📋 Slash History**: Monitor slash events and redistributions
-- **📱 Responsive Design**: Mobile-friendly interface
 
 ### User Interface
 
@@ -142,70 +141,3 @@ useEffect(() => {
   return () => contract.off(filter, handleStakeEvent);
 }, [contract]);
 ```
-
-## Testing
-
-```bash
-# Run test suite
-npm test
-
-# Run tests with coverage
-npm test -- --coverage
-
-# Run tests in watch mode
-npm test -- --watch
-```
-
-## Deployment
-
-### Development
-```bash
-npm start
-```
-
-### Production
-```bash
-npm run build
-# Deploy build/ directory to your hosting service
-```
-
-### Proxy Configuration
-
-The application is configured to proxy API requests to the backend server:
-```json
-{
-  "proxy": "http://localhost:8080"
-}
-```
-
-## Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## Troubleshooting
-
-### Common Issues
-
-1. **MetaMask Connection Issues**
-   - Ensure MetaMask is installed and unlocked
-   - Check network configuration
-   - Clear browser cache if needed
-
-2. **Transaction Failures**
-   - Verify sufficient ETH balance for gas
-   - Check contract address configuration
-   - Ensure correct network connection
-
-3. **API Connection Issues**
-   - Verify backend server is running
-   - Check proxy configuration
-   - Verify CORS settings
-
----
-
-📄 **License**: MIT  
-🔗 **Main Project**: [../../README.md](../../README.md)  
-🌐 **Live Demo**: [Demo Link]
