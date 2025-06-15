@@ -8,7 +8,6 @@ Spring Boot backend service providing REST APIs for the Story IP Trust Staking s
 
 - **Spring Boot 3.5.0**
 - **Kotlin**
-- **QueryDSL**
 - **OpenFeign** for external API calls
 
 ## Quick Start
@@ -100,33 +99,3 @@ src/main/kotlin/slashhistory/
 - **Domain-Driven Design**: Business rules encapsulated in domain layer
 - **Dependency Inversion**: Dependencies point inward toward business logic
 
-## Testing
-
-```bash
-# Run all tests
-./gradlew test
-
-# Run with coverage
-./gradlew test jacocoTestReport
-```
-
-## Docker Support
-
-```bash
-# Build and run application
-./gradlew build
-docker build -t story-staking-server .
-docker run -p 8080:8080 story-staking-server
-```
-
-## Configuration
-
-### Blockchain Integration
-
-The application integrates with the deployed smart contract to fetch slash history data. Make sure to configure the correct contract address and RPC URL.
-
----
-
-📄 **License**: MIT  
-🔗 **Main Project**: [../README.md](../README.md)  
-📖 **API Documentation**: [slash-history-api.md](slash-history-api.md)
